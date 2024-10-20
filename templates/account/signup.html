@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Register" %}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-sm p-4">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h3 class="mb-4">{% trans "Create Your account here" %}</h3>
+        <p class="register-message">{% blocktrans %}Already have an account? <a href="{{ login_url }}">Log in</a> to manage your to-do lists.{% endblocktrans %}</p>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form method="post" action="{% url 'account_signup' %}" class="needs-validation" novalidate>
+          {% csrf_token %}
+          
+          <div class="form-group mb-3">
+            <label for="id_username">{% trans "Username" %}</label>
+            <input type="text" name="username" id="id_username" class="form-control" placeholder="{% trans 'Enter your username' %}" required autocomplete="username">
+            <div class="invalid-feedback">{% trans "Username is required." %}</div>
+          </div>
+          
+          <div class="form-group mb-3">
+            <label for="id_email">{% trans "Email (Optional)" %}</label>
+            <input type="email" name="email" id="id_email" class="form-control" placeholder="{% trans 'Enter your email (optional)' %}" autocomplete="email">
+          </div>
+          
+          <div class="form-group mb-3 position-relative">
+            <label for="id_password1">{% trans "Password" %}</label>
+            <input type="password" name="password1" id="id_password1" class="form-control" placeholder="{% trans 'Enter your password' %}" required autocomplete="new-password">
+            <i class="fa fa-eye toggle-password" data-target="id_password1"></i>
+            <div class="invalid-feedback">{% trans "Password is required." %}</div>
+          </div>
+          
+          <div class="form-group mb-3 position-relative">
+            <label for="id_password2">{% trans "Confirm Password" %}</label>
+            <input type="password" name="password2" id="id_password2" class="form-control" placeholder="{% trans 'Confirm your password' %}" required>
+            <i class="fa fa-eye toggle-password" data-target="id_password2"></i>
+            <div class="invalid-feedback">{% trans "Please confirm your password." %}</div>
+          </div>
+          
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          
+          <button type="submit" class="btn btn-primary btn-block">{% trans "Register" %}</button>
+        </form>
+        
+        {% if form.errors %}
+        <div class="alert alert-danger mt-3" role="alert">
+          <p>{% trans "There was a problem with your registration. Please try again." %}</p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript to toggle password visibility -->
+<script>
+  document.querySelectorAll('.toggle-password').forEach(item => {
+    item.addEventListener('click', function() {
+      const target = document.getElementById(this.getAttribute('data-target'));
+      if (target.type === "password") {
+        target.type = "text";
+        this.classList.add('fa-eye-slash');
+        this.classList.remove('fa-eye');
+      } else {
+        target.type = "password";
+        this.classList.add('fa-eye');
+        this.classList.remove('fa-eye-slash');
+      }
+    });
+  });
+</script>
+
+{% endblock %}
