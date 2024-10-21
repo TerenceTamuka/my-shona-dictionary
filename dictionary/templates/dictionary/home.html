@@ -10,7 +10,23 @@
             <h1 class="display-4 home-text">Welcome to the Shona Dictionary</h1>
             <h2 class="h4 home-text">Your portal for translating English words to Shona.</h2>
             <p class="lead quote-text">Bridging cultures, one word at a time. Discover the beauty of Shona through translation.</p>
+            
+
+          <!-- Search for Word Button for Authenticated Users -->
+            {% if user.is_authenticated %}
+            <form method="POST" action="{% url 'dictionary' %}">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" class="form-control" name="query" placeholder="Enter English word" required>
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </form>
+            {% else %}
+            <p class="text-prompt">Please <a class="login-prompt" href="{% url 'login' %}">login</a> or <a class="register-prompt" href="{% url 'register' %}">register</a> to search for a word in the Shona dictionary.</p>
             <a href="{% url 'login' %}" class="btn btn-primary btn-lg mt-3">Login to Search</a>
+            <a href="{% url 'register' %}" class="btn btn-secondary btn-lg mt-3">Register to Search</a>
+            {% endif %}
+
         </div>
     </div>
 </div>

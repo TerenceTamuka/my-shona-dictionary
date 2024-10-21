@@ -50,6 +50,10 @@ INSTALLED_APPS = [
     'cloudinary',
 ]
 
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -66,7 +70,7 @@ ROOT_URLCONF = 'shonadictionary.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,6 +82,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'shonadictionary.wsgi.application'
 
@@ -123,6 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+# LOGIN_URL = 'login'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
