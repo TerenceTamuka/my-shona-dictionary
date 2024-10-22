@@ -22,9 +22,9 @@
                 </div>
             </form>
             {% else %}
-            <p class="text-prompt">Please <a class="login-prompt" href="{% url 'login' %}">login</a> or <a class="register-prompt" href="{% url 'register' %}">register</a> to search for a word in the Shona dictionary.</p>
-            <a href="{% url 'login' %}" class="btn btn-primary btn-lg mt-3">Login to Search</a>
-            <a href="{% url 'register' %}" class="btn btn-secondary btn-lg mt-3">Register to Search</a>
+            <p class="text-prompt">Please <a class="login-prompt" href="{% url 'account_login' %}">login</a> or <a class="register-prompt" href="{% url 'account_signup' %}">register</a> to search for a word in the Shona dictionary.</p>
+            <a href="{% url 'account_login' %}" class="btn btn-primary btn-lg mt-3">Login to Search</a>
+            <a href="{% url 'account_signup' %}" class="btn btn-secondary btn-lg mt-3">Register to Search</a>
             {% endif %}
 
         </div>

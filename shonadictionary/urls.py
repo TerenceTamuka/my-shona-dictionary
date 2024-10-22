@@ -17,11 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
+from dictionary import views as dictionary_views
 
 
 urlpatterns = [
+    path('dictionary/', include('dictionary.urls'), name="dictionary-urls"),
+    #path('dictionary/', dictionary_views.dictionary_view, name= 'dictionary'),
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
-    path('dictionary/', include('dictionary.urls')),  # Including the dictionary app's URLs
     path('', include('dictionary.urls')),  # Home page and other dictionary app URLs
+    # Including the dictionary app's URLs
+    
 ]

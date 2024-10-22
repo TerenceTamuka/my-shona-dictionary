@@ -29,28 +29,28 @@ def dictionary_view(request):
         'error_message': error_message,
     })
 
-def register_view(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('home')
-    else:
-        form = UserCreationForm()
-    return render(request, 'registration/signup.html', {'form': form})
+# def register_view(request):
+#     if request.method == 'POST':
+#         form = UserCreationForm(request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             login(request, user)
+#             return redirect('home')
+#     else:
+#         form = UserCreationForm()
+#     return render(request, 'registration/signup.html', {'form': form})
 
-def login_view(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            return redirect('dictionary')
-    else:
-        form = AuthenticationForm()
-    return render(request, 'dictionary/login.html', {'form': form})
+# def login_view(request):
+#     if request.method == 'POST':
+#         form = AuthenticationForm(data=request.POST)
+#         if form.is_valid():
+#             user = form.get_user()
+#             login(request, user)
+#             return redirect('home')
+#     else:
+#         form = AuthenticationForm()
+#     return render(request, 'registration/login.html', {'form': form})
 
-def logout_view(request):
-    logout(request)
-    return redirect('login')
+# def logout_view(request):
+#     logout(request)
+#     return redirect('login')
