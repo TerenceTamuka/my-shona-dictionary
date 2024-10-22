@@ -401,3 +401,65 @@ body {
 .navbar .navbar-brand:hover {
     color: #f8f9fa !important; /* Slightly lighter hover effect */
 }
+
+/* General form styling */
+.form-control {
+    font-family: 'Dancing Script', cursive;
+    color: #7D1332;
+    font-size: 1.2rem;
+}
+
+  /* Label styling */
+.form-group label {
+    font-family: 'Dancing Script', cursive;
+    color: #7D1332;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+  /* Button styling */
+.btn-primary {
+    background-color: #7D1332;
+    border-color: #7D1332;
+}
+
+ .btn-primary:hover {
+    background-color: #550d23;
+    border-color: #550d23;
+}
+
+  /* Error messages */
+.invalid-feedback, .alert-danger {
+    font-family: 'Dancing Script', cursive;
+    color: #7D1332;
+}
+
+  /* Toggle password visibility icon */
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #7D1332;
+}
+
+  /* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-group label {
+      font-size: 1.3rem;
+    }
+    .form-control {
+      font-size: 1rem;
+    }
+}
+.register-message {
+    margin-top: 20px;
+    color: #7D1332;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+}
+
+#account-reg{
+    color: #7D1332;
+}
