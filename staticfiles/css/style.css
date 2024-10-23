@@ -471,3 +471,49 @@ body {
 .navbar-text i {
     color: #0cf3f3; /* Change the icon color */
 }
+
+/* Footer Styling */
+.footer-bg {
+    background-color: #0B2031; /* Dark background color */
+    color: #FFFFFF; /* Text color */
+}
+
+.footer p {
+    margin: 0;
+    padding: 15px;
+    font-size: 1rem;
+    color: #FFFFFF;
+}
+
+.footer a {
+    color: #7D1332; /* Icon color */
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    color: #FFFFFF; /* Hover color for icons */
+    transform: scale(1.1); /* Slightly enlarge icons on hover */
+}
+
+.footer a:not(:last-child) {
+    margin-right: 20px; /* Add space between icons */
+}
+
+.footer p:last-child {
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer a {
+        font-size: 1.25rem; /* Slightly smaller icons on smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer p {
+        font-size: 0.875rem; /* Smaller text for very small devices */
+    }
+}
