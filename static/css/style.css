@@ -517,3 +517,16 @@ body {
         font-size: 0.875rem; /* Smaller text for very small devices */
     }
 }
+
+.navbar-brand {
+    color: #0B2031;
+    padding: 5px 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    background-color: #0B2031;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
