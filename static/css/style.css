@@ -463,3 +463,11 @@ body {
 #account-reg{
     color: #7D1332;
 }
+
+#username {
+    color: #0cf3f3; /* Change the text color */
+}
+
+.navbar-text i {
+    color: #0cf3f3; /* Change the icon color */
+}
