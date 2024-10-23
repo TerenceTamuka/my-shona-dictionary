@@ -13,26 +13,4 @@
 
     <div id="result" class="alert alert-info" style="display: none;"></div>
 
-    <script>
-        const dictionary = {
-            "hello": "mhoro",
-            "goodbye": "chisarai zvakanaka",
-            "love": "rudo",
-            "water": "mvura",
-            // Add more words here (total ~300)
-        };
-
-        document.getElementById('searchForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const query = document.getElementById('query').value.toLowerCase();
-            const resultDiv = document.getElementById('result');
-            if (dictionary[query]) {
-                resultDiv.style.display = 'block';
-                resultDiv.innerHTML = `<strong>Shona:</strong> ${dictionary[query]}`;
-            } else {
-                resultDiv.style.display = 'block';
-                resultDiv.innerHTML = 'Word not found in the dictionary.';
-            }
-        });
-    </script>
 {% endblock %}
