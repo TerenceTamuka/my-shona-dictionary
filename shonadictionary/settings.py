@@ -28,9 +28,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['8000-terencetamu-myshonadict-57mmy9stiw6.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-terencetamu-myshonadict-57mmy9stiw6.ws.codeinstitute-ide.net', 'my-shona-dictionary-app-ce78fcb5d522.herokuapp.com']
 
 
 # Application definition
