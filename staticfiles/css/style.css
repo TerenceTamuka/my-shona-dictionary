@@ -2,9 +2,17 @@ body {
     background-color: #0B2031;
     max-width: 125rem;
     margin: 0 auto;
-    font-family: "Nunito", sans-serif;
+    font-family: "Nunito", serif; 
     color: #fff;
 }
+#dynapuff-header {
+    font-family: "DynaPuff", system-ui;
+    font-weight: 600;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+  
 
 /* Styling for the hero section */
 .jumbotron-img {
@@ -404,7 +412,7 @@ body {
 
 /* General form styling */
 .form-control {
-    font-family: 'Dancing Script', cursive;
+    font-family: "Nunito", serif; 
     color: #7D1332;
     font-size: 1.2rem;
 }
