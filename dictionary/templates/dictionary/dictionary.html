@@ -12,6 +12,12 @@
         <button type="submit" class="btn btn-primary mt-2">Search</button>
     </form>
 
+    <!-- Result div, initially hidden -->
     <div id="result" class="alert alert-info" style="display: none;"></div>
 
+{% endblock %}
+
+<!-- Ensure your JavaScript is loaded at the bottom -->
+{% block script %}
+<script src="{% static 'js/script.js' %}"></script>
 {% endblock %}
