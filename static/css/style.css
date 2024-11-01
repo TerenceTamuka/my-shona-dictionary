@@ -538,3 +538,23 @@ body {
     padding: 10px 15px;
     border-radius: 5px;
 }
+
+/* Ensure result is hidden by default */
+#result {
+    display: none; /* hidden initially */
+    min-height: 40px; /* Set a minimum height for visibility */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Add styles for visibility */
+.alert-info {
+    background-color: #d9edf7; /* Light blue background */
+    color: #31708f; /* Darker text color */
+}
+
+.alert-danger {
+    background-color: #f2dede; /* Light red background */
+    color: #a94442; /* Darker red text color */
+}
