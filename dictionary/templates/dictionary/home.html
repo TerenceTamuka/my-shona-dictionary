@@ -19,6 +19,9 @@
                 <div class="input-group">
                     <input type="text" class="form-control" name="query" placeholder="Enter English word..." required>
                     <button class="btn btn-primary" type="submit">Search</button>
+                    <!-- Add this inside your HTML where the resultDiv is located -->
+                    <div id="result" style="display: none;"></div>
+                    <button id="printButton" style="display: none;">Print</button>
                 </div>
             </form>
             {% else %}

@@ -32,6 +32,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['8000-terencetamu-myshonadict-57mmy9stiw6.ws.codeinstitute-ide.net',
                 '8000-terencetamu-myshonadict-djhlfxm9dp1.ws.codeinstitute-ide.net',
+                '8000-terencetamu-myshonadict-m44f1iy8rpb.ws.codeinstitute-ide.net',
                 '.herokuapp.com',
                 'my-shona-dictionary-app-ce78fcb5d522.herokuapp.com']
 

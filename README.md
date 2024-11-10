@@ -1,131 +1,134 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Terence Zengeya,
+# Terry's Shona Dictionary App
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+Welcome to Terry's Shona Dictionary, a web application designed for users who want to learn and explore the Shona language. This app allows users to search for English words and discover their meanings in Shona, providing an engaging and accessible way to dive into the language. By offering a clean user interface, login functionality, and search capability, Terry's Shona Dictionary aims to support language learning for Shona-speaking and non-speaking audiences alike.
 
-## Gitpod Reminders
+<br>
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Key Features
 
-`python3 -m http.server`
+- __Word Translation:__ Users can search for English words to find their Shona translations. The dictionary contains over 300 common words with plans for expansion.
 
-A blue button should appear to click: _Make Public_,
+- __User Authentication:__ Users can register, log in, and log out to access the dictionary, track their learning, and receive personalized recommendations.
 
-Another blue button should appear to click: _Open Browser_.
+- __Print Option:__ Users can print translation results for offline reference.
+Responsive Design: The app is optimized for mobile, tablet, and desktop, ensuring a seamless experience across devices.
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+- __Social Media Integration:__ Links to GitHub, LinkedIn, and other social media channels to keep users updated on app developments and engage with the developer community.
 
-A blue button should appear to click: _Make Public_,
+<br>
 
-Another blue button should appear to click: _Open Browser_.
+## Technology Stack
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+__Frontend:__ HTML, CSS (Bootstrap), JavaScript (jQuery, Vanilla JavaScript)
 
-To log into the Heroku toolbelt CLI:
+__Backend:__ Django framework with Django templates
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+__Database:__ SQLite (for development) and scalable to PostgreSQL (for production)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+__Authentication:__ Django Allauth for secure user management
 
-### Connecting your Mongo database
+__Hosting:__ Compatible with any Django-supporting server (e.g., Heroku, DigitalOcean)
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+<br>
 
-------
+## User Stories
 
-## Release History
+Here are ten user stories, each with one acceptance criterion, to guide potential collaborators on what the app needs to fulfill user expectations. These stories can be added to the Kanban board to facilitate Agile methodology.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+1.  __User Registration__
 
-**June 18, 2024,** Add Mongo back into template
+    - As a __new user,__ I want __to register an account__ so that __I can save my preferences and view my search history.__
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+    - __Acceptance Criteria:__ Given a new user, when they complete the registration form, they should be able to log in immediately with their new credentials.
 
-**May 28 2024:** Fix Mongo and Links installs
+<br>
 
-**April 26 2024:** Update node version to 16
+2. __User Login__
 
-**September 20 2023:** Update Python version to 3.9.17.
+   - As a __returning user,__ I want __to log in to my account__ so that __I can continue where I left off.__
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+   - __Acceptance Criteria:__ Given a registered user, when they enter their correct credentials, they should gain access to their account.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  <br>
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+3. __English to Shona Word Search__
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+   - As a __user,__ I want __to enter an English word and get its Shona translation__ to __expand my vocabulary.__
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+   - __Acceptance Criteria:__ Given a word that exists in the dictionary, when a user searches for it, they should see the correct Shona translation.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+<br>
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+4. __Error Handling for Unknown Words__
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+   - As a __user,__ I want __to be notified__ if my __searched word is not found in the dictionary.__
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+   - __Acceptance Criteria:__ Given a word that does not exist in the dictionary, when a user searches for it, they should see an error message.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+<br>
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+5. __Print Translations__
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+   - As a __user,__ I want __the option to print a translation__ so that __I can keep a physical copy for reference.__
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+   - __Acceptance Criteria:__ Given a search result, when a user clicks the "Print" button, a print dialog should open with the translation displayed.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+<br>
 
-------
+6. __Logout__
 
-## FAQ about the uptime script
+   - As a __logged-in user,__ I want __to securely log out__ so that __my account information is safe and secure.__
 
-**Why have you added this script?**
+   - __Acceptance Criteria:__ Given a logged-in user, when they click "Logout," they should be redirected to the homepage and their session ended.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+<br>
 
-**How will this affect me?**
+7. __Responsive Mobile Experience__
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+   - As a __user on a mobile device,__ I want __the app layout to adapt to my screen__ so that __I can use the app comfortably.__
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+   - __Acceptance Criteria:__ When a user accesses the app on a mobile device, the layout should adjust to fit the screen without overlapping elements.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+<br>
 
-**So….?**
+8. __Display User’s Search History__
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+   - As a __registered user,__ I want __to view my previous search history__ to __track my learning progress.__
 
-**Can I opt out?**
+   - __Acceptance Criteria:__ Given a logged-in user, when they view their profile, they should see a list of previously searched words.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+<br>
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+9. __Favorites Feature__
 
-**Anything more?**
+    - As a __user,__ I want __to mark words as favorites__ so that __I can easily refer to them later.__
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+    - Acceptance Criteria: Given a word, when a user clicks the "Favorite" button, it should be saved to their favorites list.
 
----
+<br>
 
-Happy coding!
+10. __Admin Panel for Word Management__
+
+    - As __an admin,__ I want __to add, edit, or delete words in the dictionary__ to __keep the content accurate and relevant.__
+
+    - __Acceptance Criteria:__ Given an admin user, when they access the admin panel, they should be able to manage dictionary entries.
+
+<hr>
+
+## Contributing
+
+Contributions are welcome! If you'd like to add new features, fix bugs, or improve the code, please feel free to fork the repository and submit a pull request. Be sure to adhere to the following guidelines:
+
+__Code Quality:__ Follow PEP 8 and Django best practices.
+
+__Testing:__ Ensure all tests pass before submitting a pull request.
+
+__Documentation:__ Update documentation as needed to reflect any new changes.
+
+<br>
+
+## Acknowledgement 
+
+- Project idea by __Terence Zengeya__, influenced by the native Shona language as a Zimbabwean Developer.
