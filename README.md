@@ -6,6 +6,16 @@ Welcome to Terry's Shona Dictionary, a web application designed for users who wa
 
 <br>
 
+## Index 
+* [Key Features](#key-features) 
+* [Technology Stack](#technology-stack)
+* [User Stories](#user-stories)
+* [Contributing](#contributing)
+* [Acknowledgement](#acknowledgement)
+
+<hr>
+
+
 ## Key Features
 
 - __Word Translation:__ Users can search for English words to find their Shona translations. The dictionary contains over 300 common words with plans for expansion.
@@ -17,7 +27,9 @@ Responsive Design: The app is optimized for mobile, tablet, and desktop, ensurin
 
 - __Social Media Integration:__ Links to GitHub, LinkedIn, and other social media channels to keep users updated on app developments and engage with the developer community.
 
-<br>
+**[⬆ Back to Index](#index)**
+
+<hr>
 
 ## Technology Stack
 
@@ -31,9 +43,11 @@ __Authentication:__ Django Allauth for secure user management
 
 __Hosting:__ Compatible with any Django-supporting server (e.g., Heroku, DigitalOcean)
 
-<br>
+**[⬆ Back to Index](#index)**
 
-## User Stories
+<hr>
+
+### User Stories
 
 Here are ten user stories, each with one acceptance criterion, to guide potential collaborators on what the app needs to fulfill user expectations. These stories can be added to the Kanban board to facilitate Agile methodology.
 
@@ -115,6 +129,8 @@ Here are ten user stories, each with one acceptance criterion, to guide potentia
 
     - __Acceptance Criteria:__ Given an admin user, when they access the admin panel, they should be able to manage dictionary entries.
 
+**[⬆ Back to Index](#index)**
+
 <hr>
 
 ## Contributing
@@ -127,8 +143,13 @@ __Testing:__ Ensure all tests pass before submitting a pull request.
 
 __Documentation:__ Update documentation as needed to reflect any new changes.
 
+
+**[⬆ Back to Index](#index)**
+
 <br>
 
 ## Acknowledgement 
 
 - Project idea by __Terence Zengeya__, influenced by the native Shona language as a Zimbabwean Developer.
+
+**[⬆ Back to Index](#index)**
