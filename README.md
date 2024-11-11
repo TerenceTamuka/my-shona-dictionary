@@ -1,8 +1,11 @@
 
 # Terry's Shona Dictionary App
 
+[Terry's Shona Dictionary - live link](https://my-shona-dictionary-app-ce78fcb5d522.herokuapp.com/)
 
 Welcome to Terry's Shona Dictionary, a web application designed for users who want to learn and explore the Shona language. This app allows users to search for English words and discover their meanings in Shona, providing an engaging and accessible way to dive into the language. By offering a clean user interface, login functionality, and search capability, Terry's Shona Dictionary aims to support language learning for Shona-speaking and non-speaking audiences alike.
+
+![Mockup](static/images/TerrysShonaDictionaryMockUp.png)
 
 <br>
 
@@ -152,4 +155,7 @@ __Documentation:__ Update documentation as needed to reflect any new changes.
 
 - Project idea by __Terence Zengeya__, influenced by the native Shona language as a Zimbabwean Developer.
 
+
 **[⬆ Back to Index](#index)**
+
+<br>
