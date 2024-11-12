@@ -10,7 +10,6 @@ const dictionary = {
     // Add more words here (total ~300)
 };
 
-// Ensure the DOM is fully loaded before executing the script
 document.addEventListener('DOMContentLoaded', function () {
     console.log("DOM fully loaded and parsed");
 
@@ -18,42 +17,51 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchForm = document.getElementById('searchForm');
     const queryInput = document.getElementById('query');
     const resultDiv = document.getElementById('result');
-    const printButton = document.getElementById('printButton'); // New print button element
-
-    // Check if elements are found in the DOM
-    console.log(searchForm, queryInput, resultDiv, printButton);
+    const printButton = document.getElementById('printButton');
 
     if (searchForm && queryInput && resultDiv && printButton) {
         // Add event listener for form submission
         searchForm.addEventListener('submit', function (e) {
             e.preventDefault(); // Prevent the form from submitting and reloading the page
 
-            // Get the user's query, convert it to lowercase to match the dictionary
+            // Get the user's query, convert it to lowercase to match the API requirements
             const query = queryInput.value.toLowerCase().trim();
 
             // Log the query for debugging
             console.log("Searched Word:", query);
 
-            // Check if the word is in the dictionary
-            if (dictionary[query]) {
-                // If found, display the corresponding Shona word
+            // Fetch the translation from the Django API with CSRF token
+            fetch(`/api/dictionary/?query=${query}`, {
+                headers: {
+                    'X-CSRFToken': getCSRFToken() // Add CSRF token to headers
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Word not found in the dictionary.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Display the result if found
                 resultDiv.style.display = 'block';
                 resultDiv.classList.remove('alert-danger'); // Remove error class if present
                 resultDiv.classList.add('alert-info'); // Add success/info class
-                resultDiv.innerHTML = `<strong>Shona:</strong> ${dictionary[query]}`;
+                resultDiv.innerHTML = `<strong>Shona:</strong> ${data.shona_translation}`;
 
                 // Show the print button
                 printButton.style.display = 'inline-block';
-            } else {
-                // If not found, show an error message
+            })
+            .catch(error => {
+                // Show error if the word is not found
                 resultDiv.style.display = 'block';
                 resultDiv.classList.remove('alert-info'); // Remove success class if present
                 resultDiv.classList.add('alert-danger'); // Add error class
-                resultDiv.innerHTML = 'Word not found in the dictionary.';
+                resultDiv.innerHTML = error.message;
 
                 // Hide the print button if there's an error
                 printButton.style.display = 'none';
-            }
+            });
         });
 
         // Add event listener for the print button
@@ -62,6 +70,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     } else {
         console.error("One or more elements not found in the DOM");
+    }
+
+    // Define the getCSRFToken function
+    function getCSRFToken() {
+        return document.querySelector('[name=csrfmiddlewaretoken]').value;
     }
 
     // Define the printResult function
@@ -75,4 +88,3 @@ document.addEventListener('DOMContentLoaded', function () {
         printWindow.print();
     }
 });
-

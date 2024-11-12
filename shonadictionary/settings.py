@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'dictionary',
     'cloudinary',
+    'rest_framework',
 ]
 
 SITE_ID = 1

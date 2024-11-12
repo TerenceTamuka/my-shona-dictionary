@@ -5,7 +5,10 @@
 
 {% block content %}
     <h2>Shona Dictionary</h2>
-    <form id="searchForm" class="mb-4">
+    <form id="searchForm" class="mb-4" method="POST">
+        <!-- CSRF token for Django security -->
+        {% csrf_token %}
+        
         <div class="form-group">
             <input type="text" id="query" class="form-control" placeholder="Enter an English word..." required>
         </div>
@@ -18,7 +21,6 @@
     <!-- Add this inside your HTML where the resultDiv is located -->
     <div id="result" style="display: none;"></div>
     <button id="printButton" style="display: none;">Print</button>
-
 {% endblock %}
 
 <!-- Ensure your JavaScript is loaded at the bottom -->
