@@ -44,13 +44,11 @@ body {
     background-image: url('https://res.cloudinary.com/dtqyltolm/image/upload/v1731625371/signUpPageImage_eru2pf.png');
     background-size: cover;
     background-position: center;
-    height: 60vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     color: white;
-    text-align: center;
 }
 
 .jumbotron-img2::before {
@@ -62,7 +60,7 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);  /* Transparent overlay */
     z-index: 1;
-}
+} 
 
 /* Styling the text inside the jumbotron */
 .welcome-text {
@@ -87,6 +85,7 @@ body {
     font-size: 1.2rem;
     font-style: italic;
     margin-bottom: 1.5rem;
+    color: #fff;
 }
 
 .btn {
@@ -126,6 +125,9 @@ body {
         height: 40vh; /* Adjust for smaller devices */
     }
     
+    .jumbotron-img2 {
+        height: 40vh; /* Adjust for smaller devices */
+    }
     .welcome-text {
         padding: 10px;
     }
@@ -578,5 +580,91 @@ body {
     background-color: #d9edf7; /* Light blue background */
     color: #31708f; /* Darker text color */
 }
+
+
+/* Background styling */
+.jumbotron-img3 {
+    background-image: url('https://res.cloudinary.com/dtqyltolm/image/upload/v1731625371/signUpPageImage_eru2pf.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* Form container styling */
+.card {
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+    padding: 2rem; /* Add padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Typography and layout adjustments */
+.signin {
+    color: #7D1332;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-family: "DynaPuff", system-ui;
+}
+
+p {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: "DynaPuff", system-ui;
+}
+
+/* Button styling */
+.btn-primary {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%; /* Full width for mobile devices */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        padding: 1.5rem; /* Reduce padding on smaller screens */
+    }
+    .signin {
+        font-size: 1.5rem; /* Slightly smaller title font for mobile */
+    }
+}
+
+/* Custom CSS for Sign Out Page */
+.signout-header {
+    font-size: 2rem; /* Makes the header prominent */
+    font-weight: bold; /* Emphasizes the header */
+    text-align: center; /* Centers the header text */
+    padding: 20px 15px; /* Adds space around the header */
+    margin-bottom: 10px; /* Adds space between the header and the message */
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for contrast */
+    border-radius: 8px; /* Rounds the edges */
+    margin: 0 auto 20px auto; /* Centers the message box and adds bottom margin */
+    max-width: 600px; /* Limits the width of the message box */
+    color: #7D1332;
+    font-family: "DynaPuff", system-ui;
+}
+
+.signout-message {
+    font-size: 1.2rem; /* Slightly larger text for readability */
+    text-align: center; /* Centers the message text */
+    padding: 15px 20px; /* Adds space around the message */
+    line-height: 1.5; /* Improves readability with line spacing */
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for contrast */
+    border-radius: 8px; /* Rounds the edges */
+    margin: 0 auto 20px auto; /* Centers the message box and adds bottom margin */
+    max-width: 600px; /* Limits the width of the message box */
+    font-family: "DynaPuff", system-ui;
+}
+
+
 
 

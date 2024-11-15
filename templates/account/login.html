@@ -6,28 +6,30 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <h3 class="signin">{% trans "Sign In" %}</h3>
-            <p>
-                {% blocktrans %}Welcome back to the Shona Dictionary app! To discover more Shona, please log in. If you don't have an account yet, <a class="link" href="{{ signup_url }}">sign up</a> now to get started.{% endblocktrans %}
-            </p>
-        </div>
-    </div>
+<div class="jumbotron jumbotron-img3 d-flex align-items-center justify-content-center" 
+     style="background-image: url('https://res.cloudinary.com/dtqyltolm/image/upload/v1731625371/signUpPageImage_eru2pf.png'); 
+            background-size: cover; height: 100vh; background-position: center; color: white;">
 
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <form class="login" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                {{ form.as_p }}  <!-- Render the login form with labels and fields as <p> -->
-                
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                
-                <button class="btn btn-primary btn-block" type="submit">{% trans "Sign In" %}</button>
-            </form>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card p-4 shadow" style="background-color: rgba(255, 255, 255, 0.85); border-radius: 10px;">
+                    <h3 class="signin text-center mb-4">{% trans "Sign In" %}</h3>
+                    <p class="text-center">
+                        {% blocktrans %}Welcome back to Terry's Shona Dictionary app! To discover more Shona, please log in. If you don't have an account yet, <a class="link" href="{{ signup_url }}">sign up</a> now to get started.{% endblocktrans %}
+                    </p>
+                    <form class="login" method="POST" action="{% url 'account_login' %}">
+                        {% csrf_token %}
+                        {{ form.as_p }}  <!-- Render the login form fields with labels and inputs wrapped in <p> tags -->
+
+                        {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                        {% endif %}
+
+                        <button class="btn btn-primary btn-block" type="submit">{% trans "Sign In" %}</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
