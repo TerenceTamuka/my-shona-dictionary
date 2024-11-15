@@ -443,7 +443,7 @@ body {
 
   /* Label styling */
 .form-group label {
-    font-family: 'Dancing Script', cursive;
+    font-family: "DynaPuff", system-ui;
     color: #7D1332;
     font-size: 1.5rem;
     font-weight: 600;
@@ -462,7 +462,7 @@ body {
 
   /* Error messages */
 .invalid-feedback, .alert-danger {
-    font-family: 'Dancing Script', cursive;
+    font-family: "DynaPuff", system-ui;
     color: #7D1332;
 }
 
@@ -488,12 +488,13 @@ body {
 .register-message {
     margin-top: 20px;
     color: #7D1332;
-    font-family: 'Dancing Script', cursive;
+    font-family: "DynaPuff", system-ui;
     font-size: 1.5rem;
 }
 
 #account-reg{
     color: #7D1332;
+    font-family: "DynaPuff", system-ui;
 }
 
 #username {
